@@ -7,7 +7,15 @@
         id="name"
         class="form-control"
         name="userName"
-        [(ngModel)]="userSettings.name">
+        [(ngModel)]="userSettings.name"
+        required
+        #nameField="ngModel">
+    </div>
+
+    <div
+      [hidden]="nameField.valid || nameField.untouched"
+      class="alert alert-danger">
+      Enter a name
     </div>
 
     <div class="form-check form-group">
